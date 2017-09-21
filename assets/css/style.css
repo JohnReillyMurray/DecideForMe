@@ -84,3 +84,15 @@ footer .footer-nav {
   margin-right: 25px;
   list-style: none;
 }
+
+
+/* Simple Decide */
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}

@@ -10,5 +10,7 @@ require('font-awesome-webpack');
 require('bootstrap');
 
 // Your own code
+// var MersenneTwister = require('./mersenne-twister.js');
 require('./plugins.js');
 require('./script.js');
+require('./simple_decide.js');

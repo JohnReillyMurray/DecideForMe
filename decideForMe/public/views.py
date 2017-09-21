@@ -21,6 +21,19 @@ def load_user(user_id):
 @blueprint.route('/', methods=['GET', 'POST'])
 def home():
     """Home page."""
+    from pprint import pprint
+
+    pprint(request)
+    if request.method == 'POST':
+        for key in request.form:
+            if key == 'csrf_token':
+                continue
+            
+    return render_template('public/home.html')
+
+@blueprint.route('/old', methods=['GET', 'POST'])
+def old_home():
+    """Old home page."""
     form = LoginForm(request.form)
     # Handle logging in
     if request.method == 'POST':
@@ -31,7 +44,7 @@ def home():
             return redirect(redirect_url)
         else:
             flash_errors(form)
-    return render_template('public/home.html', form=form)
+    return render_template('public/old_home.html', form=form)
 
 
 @blueprint.route('/logout/')
